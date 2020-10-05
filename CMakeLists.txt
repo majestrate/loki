@@ -915,6 +915,12 @@ endif()
 add_subdirectory(contrib)
 add_subdirectory(src)
 
+option(WITH_PYBIND "build pybind introspection layer" ON)
+
+if(WITH_PYBIND)
+  add_subdirectory(pybind)
+endif()
+
 if(BUILD_TESTS)
   message(STATUS "Building tests")
   add_subdirectory(tests)
